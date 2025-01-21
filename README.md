@@ -1,0 +1,105 @@
+# org-luhmann
+
+An Emacs package that implements Luhmann's numbering system for Org mode.
+
+![org-luhmann](./images/org-luhmann.gif)
+
+## Overview
+
+org-luhmann provides a systematic way to organize your notes using Luhmann's numbering system in Org mode. This system enables:
+
+- Hierarchical numbering (e.g., 1, 1.1, 1.2)
+- Branch sequences with letters (e.g., 1a, 1b, 1c)
+- Infinite insertion between existing notes
+- Automatic number generation based on context
+
+## How It Works
+
+org-luhmann is designed to work incrementally, helping you build your note structure one node at a time. Unlike automatic outline numbering, it:
+
+- Does not automatically number all headings at once
+- Generates numbers based on existing context (siblings and parents)
+- Lets you choose the relationship of new nodes to existing ones
+- Preserves the semantic meaning of your note structure
+
+When you add a new number, org-luhmann analyzes:
+1. Current heading's level
+2. Previous sibling's number (if any)
+3. Parent's number (if any)
+4. Existing branch sequences
+
+Then offers appropriate numbering options like:
+- Next main sequence number (1, 2, 3, ...)
+- Next branch letter (1a, 1b, 1c, ...)
+- Next sub-number (1.1, 1.2, ...)
+- Next parent branch (2.1, 2.2, ...)
+
+This approach ensures that your note structure grows organically and maintains meaningful relationships between notes.
+
+## Installation
+
+### With use-package and straight.el
+
+```elisp
+(use-package org-luhmann
+  :straight (:host github :repo "yibie/org-luhmann")
+  :after org
+  :config
+  (org-luhmann-setup))
+```
+
+### Manual Installation
+
+1. Download `org-luhmann.el` to your load-path
+2. Add to your init file:
+
+```elisp
+(require 'org-luhmann)
+(org-luhmann-setup)
+```
+
+## Usage
+
+### Basic 
+
+### Basic Commands
+
+- `M-x org-luhmann-add-number` - Add a Luhmann number to current heading
+- `M-x org-luhmann-add-node` - Create a new heading with a Luhmann number
+
+### Numbering Examples
+
+```org
+* 1 Main topic
+** 1.1 First subtopic
+** 1.2 Second subtopic
+** 1.2a Branch of 1.2
+** 1.2b Another branch
+** 1.2.1 Sub-subtopic
+* 2 Second main topic
+```
+
+### Adding Numbers
+
+When adding a number, you'll be prompted with these options:
+
+1. New main number (e.g., next available top-level number)
+2. Continue sequence (add letter suffix)
+3. Branch from current (create sub-number)
+4. Branch from parent (create sibling number)
+
+## Customization
+
+```elisp
+;; Customize separator between number and title
+(setq org-luhmann-title-separator " ")
+```
+
+## License
+
+This project is licensed under the MIT License.
+
+## Author
+
+Yibie (yibie@outlook.com)
+
