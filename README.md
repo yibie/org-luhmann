@@ -2,7 +2,7 @@
 
 An Emacs package that implements Luhmann's numbering system for Org mode.
 
-![org-luhmann](./images/org-luhmann.gif)
+![](./assets/org-luhmann.gif)
 
 ## Overview
 
