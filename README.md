@@ -2,7 +2,7 @@
 
 An Emacs package that implements Luhmann's numbering system for Org mode.
 
-![org-luhmann demo](./assets/org-luhmann.gif)
+![org-luhmann demo](https://github.com/yibie/org-luhmann/blob/main/assets/figure1.gif)
 
 ## Overview
 
@@ -93,7 +93,32 @@ When adding a number, you'll be prompted with these options:
 ```elisp
 ;; Customize separator between number and title
 (setq org-luhmann-title-separator " ")
+
+;; Optional: Use numbers instead of stars for display
+(setq org-luhmann-display-style 'number)
+(org-luhmann-display-mode 1)
 ```
+
+The package provides two display styles for headlines:
+- `star`: Traditional org-mode stars (default)
+- `number`: Replace stars with Luhmann numbers
+
+
+
+You can toggle the display enhancement with `M-x org-luhmann-display-mode`.
+
+## Version History
+
+### 0.2.0 (2024-03)
+- Added display enhancement mode to optionally hide org-mode stars
+- Integrated display functionality into main package
+- Added customization option for headline display style
+
+### 0.1.0 (2024-03)
+- Initial release
+- Basic Luhmann numbering system implementation
+- Number generation and management
+- Interactive commands for adding numbers and nodes
 
 ## License
 
