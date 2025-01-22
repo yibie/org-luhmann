@@ -103,7 +103,7 @@ The package provides two display styles for headlines:
 - `star`: Traditional org-mode stars (default)
 - `number`: Replace stars with Luhmann numbers
 
-
+![org-luhmann display mode](https://github.com/yibie/org-luhmann/blob/main/assets/figure2.gif)
 
 You can toggle the display enhancement with `M-x org-luhmann-display-mode`.
 
