@@ -65,7 +65,10 @@
 (defun org-luhmann-setup ()
   "Setup org-luhmann."
   (interactive)
-  (org-luhmann-mode 1))
+  (org-luhmann-mode 1)
+  ;; Optional: Enable display enhancement by default
+  (when (bound-and-true-p org-luhmann-display-mode)
+    (org-luhmann-display-mode 1)))
 
 (defun org-luhmann--parse-number-part (part)
   "Parse a single part of a Luhmann number.
@@ -584,15 +587,4 @@ Possible values:
       (org-luhmann--display-setup)
     (org-luhmann--display-cleanup)))
 
-;;;###autoload
-(defun org-luhmann-setup ()
-  "Setup org-luhmann."
-  (interactive)
-  (org-luhmann-mode 1)
-  ;; Optional: Enable display enhancement by default
-  (when (bound-and-true-p org-luhmann-display-mode)
-    (org-luhmann-display-mode 1)))
-
 (provide 'org-luhmann)
-
-;;; org-luhmann.el ends here 
