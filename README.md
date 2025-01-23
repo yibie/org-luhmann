@@ -109,12 +109,12 @@ You can toggle the display enhancement with `M-x org-luhmann-display-mode`.
 
 ## Version History
 
-### 0.2.0 (2024-03)
+### 0.2.0 (2025-01-22)
 - Added display enhancement mode to optionally hide org-mode stars
 - Integrated display functionality into main package
 - Added customization option for headline display style
 
-### 0.1.0 (2024-03)
+### 0.1.0 (2025-01-21)
 - Initial release
 - Basic Luhmann numbering system implementation
 - Number generation and management
