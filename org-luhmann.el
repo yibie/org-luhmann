@@ -494,7 +494,7 @@ Example transformations:
                                 (mapcar #'car options) nil t))
          (option (assoc choice options))
          (generated-number (org-luhmann--generate-number option context))
-         (new-heading-text (read-string "Enter heading text: " "New heading")))
+         (new-heading-text (read-string "Enter heading text: " "")))
     
     ;; Apply the new number
     (when generated-number
