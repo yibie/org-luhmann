@@ -60,12 +60,13 @@ This approach ensures that your note structure grows organically and maintains m
 
 ## Usage
 
-### Basic 
-
 ### Basic Commands
 
 - `M-x org-luhmann-add-number` - Add a Luhmann number to current heading
 - `M-x org-luhmann-add-node` - Create a new heading with a Luhmann number
+- `M-x org-luhmann-export-region-as-links` - Export headings in region as org-mode links
+- `M-x org-luhmann-next-unnumbered-heading` - Navigate to next unnumbered heading
+- `M-x org-luhmann-previous-unnumbered-heading` - Navigate to previous unnumbered heading
 
 ### Numbering Examples
 
@@ -78,6 +79,20 @@ This approach ensures that your note structure grows organically and maintains m
 ** 1.2.1 Sub-subtopic
 * 2 Second main topic
 ```
+
+### Exporting Links
+
+The `org-luhmann-export-region-as-links` command allows you to export headings as org-mode links:
+
+1. Select a region containing headings, or position cursor on a heading
+2. Use `C-c l e` or `M-x org-luhmann-export-region-as-links`
+3. Choose a target file (existing files will be appended to, new files will be created)
+4. The command automatically creates unique IDs for each heading and generates org-mode links
+
+This is useful for creating:
+- Table of contents for specific sections
+- Reference lists for topics
+- Link collections for projects
 
 ### Adding Numbers
 
@@ -108,6 +123,13 @@ The package provides two display styles for headlines:
 You can toggle the display enhancement with `M-x org-luhmann-display-mode`.
 
 ## Version History
+
+### 0.3.0 (2025-01-23)
+- Added smart navigation for unnumbered headings
+- New export functionality for creating org-mode link collections
+- Integrated savehist-mode for persistent export history
+- Streamlined keyboard shortcuts and removed redundant features
+- Improved file selection interface with better user experience
 
 ### 0.2.0 (2025-01-22)
 - Added display enhancement mode to optionally hide org-mode stars
