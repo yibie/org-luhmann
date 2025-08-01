@@ -117,7 +117,7 @@ Each card contains the following information:
 - `:file`: Original file path
 
 ### Display Format
-The workbench uses org-mode structure to display cards, maintaining the original level structure:
+The workbench uses org-mode structure to display cards, breaking the original level structure to make it easier to move and reorganize cards:
 
 #### Display when adding subtree (recommended)
 ```
