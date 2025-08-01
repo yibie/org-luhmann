@@ -36,6 +36,42 @@ Then offers appropriate numbering options like:
 
 This approach ensures that your note structure grows organically and maintains meaningful relationships between notes.
 
+
+### Adding Numbers
+
+When adding a number, you'll be prompted with these options:
+
+1. New main number (e.g., next available top-level number)
+2. Continue sequence (add letter suffix)
+3. Branch from current (create sub-number)
+4. Branch from parent (create sibling number)
+
+## Workbench Feature
+
+For more details, please refer to [WORKBENCH.md](WORKBENCH.md).
+
+The workbench provides a digital card system for managing your Luhmann notes:
+
+- **Add subtree**: Use `C-c l w` on any Luhmann-numbered heading to add the entire subtree to your current workbench
+- **Add heading**: Use `C-c l h` on any Luhmann-numbered heading to add only the heading (without subtree) to your current workbench
+- **Select workbench**: Use `C-c l W` to select, create, or manage workbenches
+- **Move subtree**: Use `C-c l m` to move subtrees with intelligent renumbering
+- **Organize cards**: Move cards up/down (`M-↑`/`M-↓`) to arrange them in your preferred order
+- **Navigate cards**: Use `n`/`p` or `C-n`/`C-p` to move between cards
+- **Remove cards**: Use `C-c C-k` to remove cards from workbench
+- **Clear workbench**: Use `C-c C-c` to clear all cards from current workbench
+- **Multi-workbench support**: Create separate workbenches for different projects or topics
+- **Persistent storage**: All workbench states are automatically saved and restored across sessions
+- **Visual interface**: Clean org-mode outline with hidden stars, supporting folding and efficient navigation
+
+The workbench is perfect for:
+- Creating temporary collections of related notes
+- Planning writing projects
+- Organizing research materials
+- Building argument structures
+- Managing multiple projects with separate workbenches
+- Keeping different topics organized independently
+
 ## Installation
 
 ### With use-package and straight.el
@@ -68,6 +104,12 @@ This approach ensures that your note structure grows organically and maintains m
 - `M-x org-luhmann-next-unnumbered-heading` - Navigate to next unnumbered heading
 - `M-x org-luhmann-previous-unnumbered-heading` - Navigate to previous unnumbered heading
 
+### Workbench Commands
+
+- `C-c l w` - Add entire subtree to workbench (recommended)
+- `C-c l h` - Add only current heading to workbench (without subtree)
+- `C-c l W` - Select or manage workbenches
+
 ### Numbering Examples
 
 ```org
@@ -78,6 +120,30 @@ This approach ensures that your note structure grows organically and maintains m
 ** 1.2b Another branch
 ** 1.2.1 Sub-subtopic
 * 2 Second main topic
+```
+
+### Subtree Movement Examples
+
+The intelligent subtree movement feature allows you to reorganize your knowledge structure:
+
+**Before moving:**
+```org
+* 1 AI Research
+* 2 Market Analysis
+* 3 Technical Details
+  * 3.1 Implementation
+  * 3.2 Architecture
+* 4 Future Plans
+```
+
+**After moving "3 Technical Details" under "1 AI Research":**
+```org
+* 1 AI Research
+  * 1.1 Technical Details
+    * 1.1.1 Implementation
+    * 1.1.2 Architecture
+* 2 Market Analysis
+* 4 Future Plans  ← Number gap preserved (Strategy A)
 ```
 
 ### Exporting Links
@@ -93,15 +159,6 @@ This is useful for creating:
 - Table of contents for specific sections
 - Reference lists for topics
 - Link collections for projects
-
-### Adding Numbers
-
-When adding a number, you'll be prompted with these options:
-
-1. New main number (e.g., next available top-level number)
-2. Continue sequence (add letter suffix)
-3. Branch from current (create sub-number)
-4. Branch from parent (create sibling number)
 
 ## Customization
 
@@ -124,23 +181,31 @@ You can toggle the display enhancement with `M-x org-luhmann-display-mode`.
 
 ## Version History
 
-### 0.3.0 (2025-01-23)
+### 0.4.0 (2025-08-01)  
+**Features**  
+- **Digital Workbench Integration**: Full card management system with persistent state across sessions, including:  
+  - `C-c l w` (add subtree), `C-c l h` (add heading), `C-c l W` (select workbench) commands  
+  - Card organization via move up/down functionality and jump-to-original-location links  
+  - Use org-mode as a digital workbench, with all the features of org-mode, including folding/navigation, auto-save, etc.
+
+**Multi-Workbench Support**: Manage multiple card collections with:  
+  - Workbench selection interface (create/manage options)  
+  - Rename/delete/create workbenches  
+  - Persistent storage across sessions  
+  - Clear header display for current workbench context  
+
+**Smart Subtree Movement**: Complete implementation of:  
+  - Automatic renumbering during moves  
+  - Conflict resolution with letter suffixes (e.g., "3.1" → "3.1a")  
+  - Maintains number gaps to reflect Luhmann's practice  
+
+### 0.3.0 (2025-07-31)
 - Added smart navigation for unnumbered headings
 - New export functionality for creating org-mode link collections
 - Integrated savehist-mode for persistent export history
 - Streamlined keyboard shortcuts and removed redundant features
 - Improved file selection interface with better user experience
 
-### 0.2.0 (2025-01-22)
-- Added display enhancement mode to optionally hide org-mode stars
-- Integrated display functionality into main package
-- Added customization option for headline display style
-
-### 0.1.0 (2025-01-21)
-- Initial release
-- Basic Luhmann numbering system implementation
-- Number generation and management
-- Interactive commands for adding numbers and nodes
 
 ## License
 
