@@ -86,7 +86,6 @@
   "Setup org-luhmann."
   (interactive)
   (org-luhmann-mode 1)
-  (org-luhmann--workbenches-load)
   ;; Optional: Enable display enhancement by default
   (when (bound-and-true-p org-luhmann-display-mode)
     (org-luhmann-display-mode 1)))
