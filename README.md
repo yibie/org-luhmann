@@ -48,29 +48,7 @@ When adding a number, you'll be prompted with these options:
 
 ## Workbench Feature
 
-For more details, please refer to [WORKBENCH.md](WORKBENCH.md).
-
-The workbench provides a digital card system for managing your Luhmann notes:
-
-- **Add subtree**: Use `C-c l w` on any Luhmann-numbered heading to add the entire subtree to your current workbench
-- **Add heading**: Use `C-c l h` on any Luhmann-numbered heading to add only the heading (without subtree) to your current workbench
-- **Select workbench**: Use `C-c l W` to select, create, or manage workbenches
-- **Move subtree**: Use `C-c l m` to move subtrees with intelligent renumbering
-- **Organize cards**: Move cards up/down (`M-↑`/`M-↓`) to arrange them in your preferred order
-- **Navigate cards**: Use `n`/`p` or `C-n`/`C-p` to move between cards
-- **Remove cards**: Use `C-c C-k` to remove cards from workbench
-- **Clear workbench**: Use `C-c C-c` to clear all cards from current workbench
-- **Multi-workbench support**: Create separate workbenches for different projects or topics
-- **Persistent storage**: All workbench states are automatically saved and restored across sessions
-- **Visual interface**: Clean org-mode outline with hidden stars, supporting folding and efficient navigation
-
-The workbench is perfect for:
-- Creating temporary collections of related notes
-- Planning writing projects
-- Organizing research materials
-- Building argument structures
-- Managing multiple projects with separate workbenches
-- Keeping different topics organized independently
+This feature has been moved to a separate package: [org-workbench](https://github.com/yibie/org-workbench). Please refer to its README.md for details.
 
 ## Installation
 
@@ -103,12 +81,6 @@ The workbench is perfect for:
 - `M-x org-luhmann-export-region-as-links` - Export headings in region as org-mode links
 - `M-x org-luhmann-next-unnumbered-heading` - Navigate to next unnumbered heading
 - `M-x org-luhmann-previous-unnumbered-heading` - Navigate to previous unnumbered heading
-
-### Workbench Commands
-
-- `C-c l w` - Add entire subtree to workbench (recommended)
-- `C-c l h` - Add only current heading to workbench (without subtree)
-- `C-c l W` - Select or manage workbenches
 
 ### Numbering Examples
 
@@ -180,6 +152,11 @@ The package provides two display styles for headlines:
 You can toggle the display enhancement with `M-x org-luhmann-display-mode`.
 
 ## Version History
+
+### 0.5.0 (2025-08-02)
+**Move Workbench to a separate package**
+
+The workbench feature has been moved to a separate package: [org-workbench](https://github.com/yibie/org-workbench). Please refer to its README.md for details.
 
 ### 0.4.0 (2025-08-01)  
 **Features**  
